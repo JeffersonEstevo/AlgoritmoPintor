@@ -1,37 +1,57 @@
-## Welcome to GitHub Pages
+# Algoritmo Pintor
+Arquivos referentes ao trabalho final da disciplina Computação Gráfica - DCA0114
 
-You can use the [editor on GitHub](https://github.com/JeffersonEstevo/AlgoritmoPintor/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+### Alunos: 
+#### Matheus Augusto do Amaral / Jefferson Estevo Feitosa / Elton Rafael Costa da Silva
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+**Para rodar o programa no ambiente Linux, basta seguir os passos descritos abaixo, utilizando o temrminal em um ambiente Linux, com o compilador gcc instalado:**
 
-### Markdown
+Compilar no Linux: 
+* ``` g++ Pintor.cpp -o pintor -lm -lGL -lGLU -lglut ```
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Executar no Linux: 
+* ```./pintor ```
 
-```markdown
-Syntax highlighted code block
+<p>O programa base irá desenhar 3 objetos, ordenados pela sua profundidade com relação ao eixo Z. Um trapézio vermelho mais a frente, um losango verde no meio, e por fim, um triangulo azul. Para fazer as rotações na cena devemos pressionar as teclas (AS LETRAS DEVEM SER MAÍUSCULAS):</p>
 
-# Header 1
-## Header 2
-### Header 3
+* Q: para fazer uma rotação de 10º positivos em torno do eixo X.
+* A: para fazer uma rotação de 10º negativos em torno do eixo X.
+* W: para fazer uma rotação de 10º positivos em torno do eixo Y.
+* S: para fazer uma rotação de 10º negativos em torno do eixo Y.
+* E: para fazer uma rotação de 10º positivos em torno do eixo Z.
+* D: para fazer uma rotação de 10º negativos em torno do eixo Z.
 
-- Bulleted
-- List
+<p>Para que seja possível desenhar outras figuras, devemos alterar os seguintes parâmetros:</p>
 
-1. Numbered
-2. List
+```c++
+int num_objetos = 3, num_vertices = 12;
 
-**Bold** and _Italic_ and `Code` text
+float Cena[3][15] = { { -3.0, -4.0, 4.0,  // X, Y e Z do primeiro ponto do primeiro objeto
+                         4.0, -4.0, 4.0,  // X, Y e Z do segundo ponto primeiro do objeto
+                         2.0, 3.0, 4.0,   // X, Y e Z do terceiro ponto do primeiro objeto
+                         -3.0, 3.0, 4.0,  // X, Y e Z do quarto ponto do primeiro objeto
+                         1.0, 0.0, 0.0},  // R, G e B do primeiro objeto (COR)
 
-[Link](url) and ![Image](src)
+                       { -4.0, -2.0, 0.0,  // X, Y e Z do primeiro ponto do segundo objeto
+                         -4.0, -2.0, 0.0,  // X, Y e Z do segundo ponto segundo do objeto
+                          5.0, -2.0, 0.0,  // X, Y e Z do terceiro ponto do segundo objeto
+                         -2.0, 1.5, 0.0,   // X, Y e Z do quarto ponto do segundo objeto
+                          0.0, 0.0, 1.0},  // R, G e B do segundo objeto (COR)
+
+                        {-1.0, -6.0, 2.0,   // X, Y e Z do primeiro ponto do terceiro objeto
+                         1.0, -3.0, 2.0,    // X, Y e Z do segundo ponto terceiro do objeto
+                         3.0, -6.0, 2.0,    // X, Y e Z do terceiro ponto do terceiro objeto
+                         1.0, -9.0, 2.0,    // X, Y e Z do quarto ponto do terceiro objeto
+                         0.0, 1.0, 0.0} };  // R, G e B do segundo vértice (COR)
 ```
+<p>Onde, informamos inicalmente o número de objetos que desejamos pintar na cena. E o número de vértices que cada objeto da cena irá possuir.</p>
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+<p>No exemplo padrão do código, temos 3 objetos, cada um com 12 vértices e 3 valores finais referentes à sua cor.</p>
 
-### Jekyll Themes
+Alterando os valores mostrados acima, podemos: 
+* Adicionar ou remover quantidade de objetos.
+* Alterar o número de vértices(pontos) que os objetos terão.
+* Alterar os valores de coordenadas e de cor para cada objeto.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/JeffersonEstevo/AlgoritmoPintor/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Fazendo isso, podemos aproximar objetos desejados na renderização, aumentado o número de vértices.
 
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
