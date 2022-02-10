@@ -59,11 +59,11 @@ Fazendo isso, podemos aproximar objetos desejados na renderização, aumentado o
 
 <h3>Exemplos de 3 execuções do algoritmo com figuras diferentes</h3>
 
-![Image](imagens/biel.png)
+![Image](imagens/1.gif)
 
-![Image](imagens/biel.png)
+![Image](imagens/2.gif)
 
-![Image](imagens/biel.png)
+![Image](imagens/3.gif)
 
 
 <hr>
