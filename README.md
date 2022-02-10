@@ -55,6 +55,16 @@ Alterando os valores mostrados acima, podemos:
 * Alterar os valores de coordenadas e de cor para cada objeto.
 
 Fazendo isso, podemos aproximar objetos desejados na renderização, aumentado o número de vértices.
+<hr>
+
+<h3>Exemplos de 3 execuções do algoritmo com figuras diferentes</h3>
+
+![Image](imagens/biel.png)
+
+![Image](imagens/biel.png)
+
+![Image](imagens/biel.png)
+
 
 <hr>
 Abaixo temos o código completo, do programa Algortimo Pintor:
@@ -376,5 +386,4 @@ int main(int argc, char** argv)
 
 
 ```
-
 
